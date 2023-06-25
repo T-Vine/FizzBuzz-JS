@@ -1,34 +1,34 @@
-//main variables
+// Main variables.
 
 let iterator = 0;
 let value1;
 let value2;
 let mainValue;
-//let isFizzorBuzz;
 
-//selecting error message
+
+// Selecting error message.
 let errorMessage = document.querySelector("#errorMessage");
 
-//getting input fields
+// Getting input fields
 let input = document.querySelector("#player1"); 
 let input2 = document.querySelector("#player2");
 
-//adding event listeners
+// Adding event listeners
 input.addEventListener("keypress", myFunc);
-input2.addEventListener("keypress", myFunc); //both should call the same function
+input2.addEventListener("keypress", myFunc); // Both should call the same function.
 
 function myFunc(event) {
     
 
     if (event.key === "Enter") {
         
-        iterator += 1; //incrementing iterator
+        iterator += 1; // Incrementing iterator (for checking if fizz/buzz).
 
         event.preventDefault();
         value1 = input.value;
         value2 = input2.value;
         
-        //logging details for testing
+        // Logging details for testing. 
         console.log("Value 1 is "+value1+". Value 2 is "+value2+".");
         console.log("The iterator is "+iterator); 
         
@@ -39,7 +39,7 @@ function myFunc(event) {
         }
         
         
-        //Decision for message
+        // Decision for message.
         if (parseInt(mainValue) > 0 && parseInt(mainValue) < 1000) {
             mainValue = parseInt(mainValue);
         }
@@ -62,9 +62,9 @@ function myFunc(event) {
                 errorMessage.style.display = "block";
             }
         } else if (iterator % 3 === 0) {
-            console.log("Iterator divisible by 3.") //testing
+            console.log("Iterator divisible by 3.") // For Testing.
             if (String(mainValue).toUpperCase() == "FIZZ") {
-                console.log("Fizz Found: correct."); //testing if fizz  
+                console.log("Fizz Found: correct."); // Testing if fizz.
                       
             } else {
                 errorMessage.style.display = "block";
